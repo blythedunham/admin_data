@@ -24,11 +24,11 @@ module AdminData
     end
 
     def ensure_is_allowed_to_view
-      render :text => 'not authorized' unless is_allowed_to_view?
+      render :text => 'not authorized' unless is_allowed_to_view? || performed?
     end
 
     def ensure_is_allowed_to_update
-      render :text => 'not authorized' unless is_allowed_to_update?
+      render :text => 'not authorized' unless is_allowed_to_update? || performed?
     end
 
     def get_class_from_params
